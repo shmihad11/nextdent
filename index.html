@@ -15,6 +15,7 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
 
 <style>
+
 :root{
   --teal:#1899ae;
   --cyan:#18b6cf;
@@ -30,667 +31,2392 @@
   --shadow:0 22px 60px rgba(8,62,73,.13);
   --radius:22px;
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+  width:100%;
+  max-width:100%;
+  overflow-x:hidden;
+}
+
 body{
   font-family:"DM Sans",sans-serif;
   color:var(--ink);
   background:#fff;
   line-height:1.65;
   overflow-x:hidden;
+  width:100%;
+  max-width:100%;
   font-size:16px;
 }
-a{text-decoration:none;color:inherit}
-button,input,textarea,select{font:inherit}
-img{display:block;max-width:100%}
-.container{width:min(1160px,92%);margin:auto}
-.section{padding:112px 0}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+button,
+input,
+textarea,
+select{
+  font:inherit;
+}
+
+img{
+  display:block;
+  max-width:100%;
+}
+
+.container{
+  width:min(1160px,92%);
+  margin:auto;
+}
+
+.section{
+  padding:112px 0;
+}
+
 .kicker{
-  display:inline-flex;align-items:center;gap:9px;
-  color:var(--teal-dark);font-size:14px;font-weight:800;
-  letter-spacing:1.2px;text-transform:uppercase;margin-bottom:16px
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  color:var(--teal-dark);
+  font-size:14px;
+  font-weight:800;
+  letter-spacing:1.2px;
+  text-transform:uppercase;
+  margin-bottom:16px;
 }
-.kicker:before{content:"";width:9px;height:9px;border-radius:50%;background:var(--cyan)}
-h1,h2,h3,h4{font-family:"Manrope",sans-serif;color:var(--navy)}
-h1{font-size:clamp(48px,6vw,76px);line-height:1.04;letter-spacing:-3px}
-h2{font-size:clamp(36px,4.4vw,54px);line-height:1.1;letter-spacing:-2px}
-.section-head{max-width:760px;margin-bottom:54px}
-.section-head.center{text-align:center;margin-left:auto;margin-right:auto}
-.section-head p{margin-top:18px;color:var(--muted);font-size:18px;line-height:1.8}
+
+.kicker:before{
+  content:"";
+  width:9px;
+  height:9px;
+  border-radius:50%;
+  background:var(--cyan);
+}
+
+h1,
+h2,
+h3,
+h4{
+  font-family:"Manrope",sans-serif;
+  color:var(--navy);
+}
+
+h1{
+  font-size:clamp(48px,6vw,76px);
+  line-height:1.04;
+  letter-spacing:-3px;
+}
+
+h2{
+  font-size:clamp(36px,4.4vw,54px);
+  line-height:1.1;
+  letter-spacing:-2px;
+}
+
+.section-head{
+  max-width:760px;
+  margin-bottom:54px;
+}
+
+.section-head.center{
+  text-align:center;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.section-head p{
+  margin-top:18px;
+  color:var(--muted);
+  font-size:18px;
+  line-height:1.8;
+}
+
 .btn{
-  display:inline-flex;align-items:center;justify-content:center;gap:9px;
-  padding:16px 23px;border-radius:12px;font-size:16px;font-weight:800;
-  transition:.25s;border:1px solid transparent;cursor:pointer
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  padding:16px 23px;
+  border-radius:12px;
+  font-size:16px;
+  font-weight:800;
+  transition:.25s;
+  border:1px solid transparent;
+  cursor:pointer;
 }
-.btn-primary{background:var(--teal);color:#fff;box-shadow:0 13px 28px rgba(24,153,174,.22)}
-.btn-primary:hover{background:var(--teal-dark);transform:translateY(-2px)}
-.btn-light{background:#fff;color:var(--navy);border-color:var(--line)}
-.btn-light:hover{border-color:var(--teal);color:var(--teal-dark)}
-.btn-dark{background:var(--navy);color:#fff}
-.btn-dark:hover{background:#103942;transform:translateY(-2px)}
-.tag{display:inline-flex;padding:8px 12px;border-radius:100px;background:var(--soft);color:var(--teal-dark);font-size:12px;font-weight:800}
 
-/* Header */
+.btn-primary{
+  background:var(--teal);
+  color:#fff;
+  box-shadow:0 13px 28px rgba(24,153,174,.22);
+}
+
+.btn-primary:hover{
+  background:var(--teal-dark);
+  transform:translateY(-2px);
+}
+
+.btn-light{
+  background:#fff;
+  color:var(--navy);
+  border-color:var(--line);
+}
+
+.btn-light:hover{
+  border-color:var(--teal);
+  color:var(--teal-dark);
+}
+
+.btn-dark{
+  background:var(--navy);
+  color:#fff;
+}
+
+.btn-dark:hover{
+  background:#103942;
+  transform:translateY(-2px);
+}
+
+.tag{
+  display:inline-flex;
+  padding:8px 12px;
+  border-radius:100px;
+  background:var(--soft);
+  color:var(--teal-dark);
+  font-size:12px;
+  font-weight:800;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
 header{
-  position:fixed;top:0;left:0;width:100%;z-index:1000;
-  background:rgba(7,31,38,.94);backdrop-filter:blur(16px);
-  border-bottom:1px solid rgba(255,255,255,.08)
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  max-width:100%;
+  z-index:1000;
+  background:rgba(7,31,38,.94);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(255,255,255,.08);
 }
-.navbar{height:88px;display:flex;align-items:center;justify-content:space-between}
-.brand{display:flex;align-items:center;gap:13px}
-.logo-img{
-  width:166px;height:72px;object-fit:contain;object-position:left;
-  /* background:#000;border-radius:8px */
-}
-.nav{display:flex;align-items:center;gap:28px}
-.nav a{font-size:14px;font-weight:700;color:#c6d9de;transition:.2s}
-.nav a:hover{color:#fff}
-.nav-cta{background:var(--teal);color:#fff!important;padding:12px 17px;border-radius:10px}
-.nav-cta:hover{background:var(--cyan)!important}
-.menu{display:none;background:none;border:0;font-size:29px;color:#fff;cursor:pointer}
 
-/* Hero */
+.navbar{
+  height:88px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:13px;
+}
+
+.logo-img{
+  width:166px;
+  height:72px;
+  object-fit:contain;
+  object-position:left;
+}
+
+.nav{
+  display:flex;
+  align-items:center;
+  gap:28px;
+}
+
+.nav a{
+  font-size:14px;
+  font-weight:700;
+  color:#c6d9de;
+  transition:.2s;
+}
+
+.nav a:hover{
+  color:#fff;
+}
+
+.nav-cta{
+  background:var(--teal);
+  color:#fff!important;
+  padding:12px 17px;
+  border-radius:10px;
+}
+
+.nav-cta:hover{
+  background:var(--cyan)!important;
+}
+
+.menu{
+  display:none;
+  background:none;
+  border:0;
+  font-size:29px;
+  color:#fff;
+  cursor:pointer;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
 .hero{
   padding:165px 0 95px;
   background:
     radial-gradient(circle at 80% 20%,rgba(24,182,207,.18),transparent 30%),
     radial-gradient(circle at 20% 90%,rgba(24,153,174,.10),transparent 28%),
-    linear-gradient(180deg,#eefbfd,#fff)
+    linear-gradient(180deg,#eefbfd,#fff);
 }
-.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;align-items:center;gap:68px}
-.hero .kicker{color:var(--teal-dark)}
-.hero h1{margin:18px 0 25px}
-.hero h1 span{color:var(--teal)}
-.hero-copy{max-width:650px;color:#536d75;font-size:20px;line-height:1.8}
-.hero-actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:34px}
-.hero-note{display:flex;align-items:center;gap:13px;margin-top:31px}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.02fr .98fr;
+  align-items:center;
+  gap:68px;
+}
+
+.hero .kicker{
+  color:var(--teal-dark);
+}
+
+.hero h1{
+  margin:18px 0 25px;
+}
+
+.hero h1 span{
+  color:var(--teal);
+}
+
+.hero-copy{
+  max-width:650px;
+  color:#536d75;
+  font-size:20px;
+  line-height:1.8;
+}
+
+.hero-actions{
+  display:flex;
+  gap:13px;
+  flex-wrap:wrap;
+  margin-top:34px;
+}
+
+.hero-note{
+  display:flex;
+  align-items:center;
+  gap:13px;
+  margin-top:31px;
+}
+
 .mini-icon{
-  width:43px;height:43px;border-radius:12px;background:var(--soft);
-  color:var(--teal-dark);display:grid;place-items:center;font-weight:900;flex-shrink:0
+  width:43px;
+  height:43px;
+  border-radius:12px;
+  background:var(--soft);
+  color:var(--teal-dark);
+  display:grid;
+  place-items:center;
+  font-weight:900;
+  flex-shrink:0;
 }
-.hero-note strong{display:block;font-size:14px}
-.hero-note span{font-size:13px;color:var(--muted)}
-.hero-visual{position:relative}
+
+.hero-note strong{
+  display:block;
+  font-size:14px;
+}
+
+.hero-note span{
+  font-size:13px;
+  color:var(--muted);
+}
+
+.hero-visual{
+  position:relative;
+  min-width:0;
+}
+
 .hero-photo{
-  width:100%;height:570px;object-fit:cover;object-position:center top;
-  border-radius:30px;background:#dceff2;
-  box-shadow:var(--shadow)
+  width:100%;
+  height:570px;
+  object-fit:cover;
+  object-position:center top;
+  border-radius:30px;
+  background:#dceff2;
+  box-shadow:var(--shadow);
 }
+
 .float-card{
-  position:absolute;left:-28px;bottom:28px;background:#fff;border-radius:18px;
-  padding:17px 20px;box-shadow:var(--shadow);display:flex;align-items:center;gap:12px
+  position:absolute;
+  left:-28px;
+  bottom:28px;
+  background:#fff;
+  border-radius:18px;
+  padding:17px 20px;
+  box-shadow:var(--shadow);
+  display:flex;
+  align-items:center;
+  gap:12px;
 }
-.float-card .mini-icon{width:45px;height:45px;background:#e5f8fb}
-.float-card strong{display:block;font-size:14px}
-.float-card span{font-size:12px;color:var(--muted)}
+
+.float-card .mini-icon{
+  width:45px;
+  height:45px;
+  background:#e5f8fb;
+}
+
+.float-card strong{
+  display:block;
+  font-size:14px;
+}
+
+.float-card span{
+  font-size:12px;
+  color:var(--muted);
+}
+
 .rating-card{
-  position:absolute;right:-18px;top:28px;background:var(--navy);color:#fff;
-  border-radius:16px;padding:15px 17px;box-shadow:var(--shadow)
+  position:absolute;
+  right:-18px;
+  top:28px;
+  background:var(--navy);
+  color:#fff;
+  border-radius:16px;
+  padding:15px 17px;
+  box-shadow:var(--shadow);
 }
-.rating-card strong{display:block;font-size:15px;color:#fff}
-.rating-card span{font-size:11px;color:#b9d1d6}
-.rating-stars{color:#5de0ef;letter-spacing:2px;font-size:13px;margin-bottom:2px}
 
-/* Trust */
-.trust{padding:31px 0;background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.trust-grid{display:grid;grid-template-columns:repeat(4,1fr)}
-.trust-item{text-align:center;border-right:1px solid var(--line);padding:0 18px}
-.trust-item:last-child{border:0}
-.trust-item strong{font:800 25px Manrope;color:var(--navy);display:block}
-.trust-item span{font-size:13px;color:var(--muted);display:block;margin-top:3px}
+.rating-card strong{
+  display:block;
+  font-size:15px;
+  color:#fff;
+}
 
-/* Services */
-.services{background:var(--bg)}
-.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.rating-card span{
+  font-size:11px;
+  color:#b9d1d6;
+}
+
+.rating-stars{
+  color:#5de0ef;
+  letter-spacing:2px;
+  font-size:13px;
+  margin-bottom:2px;
+}
+
+
+/* =========================
+   TRUST
+========================= */
+
+.trust{
+  padding:31px 0;
+  background:#fff;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+
+.trust-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+}
+
+.trust-item{
+  text-align:center;
+  border-right:1px solid var(--line);
+  padding:0 18px;
+}
+
+.trust-item:last-child{
+  border:0;
+}
+
+.trust-item strong{
+  font:800 25px Manrope;
+  color:var(--navy);
+  display:block;
+}
+
+.trust-item span{
+  font-size:13px;
+  color:var(--muted);
+  display:block;
+  margin-top:3px;
+}
+
+
+/* =========================
+   SERVICES
+========================= */
+
+.services{
+  background:var(--bg);
+}
+
+.service-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
 .service{
-  background:#fff;border:1px solid var(--line);border-radius:23px;
-  overflow:hidden;transition:.25s
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:23px;
+  overflow:hidden;
+  transition:.25s;
+  min-width:0;
 }
-.service:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:#b8e0e6}
-.service-img{height:235px;overflow:hidden;position:relative}
+
+.service:hover{
+  transform:translateY(-6px);
+  box-shadow:var(--shadow);
+  border-color:#b8e0e6;
+}
+
+.service-img{
+  height:235px;
+  overflow:hidden;
+  position:relative;
+}
+
 .service-img:after{
-  content:"";position:absolute;inset:0;
-  background:linear-gradient(180deg,transparent 50%,rgba(7,31,38,.15))
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    180deg,
+    transparent 50%,
+    rgba(7,31,38,.15)
+  );
 }
-.service-img img{width:100%;height:100%;object-fit:cover;transition:.45s}
-.service:hover .service-img img{transform:scale(1.055)}
-.service-body{padding:29px}
+
+.service-img img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.45s;
+}
+
+.service:hover .service-img img{
+  transform:scale(1.055);
+}
+
+.service-body{
+  padding:29px;
+}
+
 .service-icon{
-  width:45px;height:45px;border-radius:13px;background:var(--soft);color:var(--teal-dark);
-  display:grid;place-items:center;font-size:19px;margin-bottom:18px
+  width:45px;
+  height:45px;
+  border-radius:13px;
+  background:var(--soft);
+  color:var(--teal-dark);
+  display:grid;
+  place-items:center;
+  font-size:19px;
+  margin-bottom:18px;
 }
-.service h3{font-size:22px;line-height:1.25;margin-bottom:10px}
-.service p{font-size:16px;color:var(--muted);line-height:1.75;margin-bottom:20px}
-.service a{color:var(--teal-dark);font-size:15px;font-weight:800}
 
-/* About */
-.about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:78px;align-items:center}
-.about-photo-wrap{position:relative}
-.about-photo{width:100%;height:535px;object-fit:cover;object-position:center top;border-radius:27px}
+.service h3{
+  font-size:22px;
+  line-height:1.25;
+  margin-bottom:10px;
+}
+
+.service p{
+  font-size:16px;
+  color:var(--muted);
+  line-height:1.75;
+  margin-bottom:20px;
+}
+
+.service a{
+  color:var(--teal-dark);
+  font-size:15px;
+  font-weight:800;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-grid{
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:78px;
+  align-items:center;
+}
+
+.about-photo-wrap{
+  position:relative;
+  min-width:0;
+}
+
+.about-photo{
+  width:100%;
+  height:535px;
+  object-fit:cover;
+  object-position:center top;
+  border-radius:27px;
+}
+
 .experience{
-  position:absolute;right:-22px;bottom:28px;background:var(--navy);color:#fff;
-  border-radius:17px;padding:18px 21px;box-shadow:var(--shadow)
+  position:absolute;
+  right:-22px;
+  bottom:28px;
+  background:var(--navy);
+  color:#fff;
+  border-radius:17px;
+  padding:18px 21px;
+  box-shadow:var(--shadow);
 }
-.experience strong{display:block;font:800 25px Manrope;color:#5de0ef}
-.experience span{font-size:12px;color:#c3d6da}
-.about-copy p{color:var(--muted);font-size:17px;line-height:1.9;margin:20px 0}
-.checks{display:grid;gap:14px;margin:27px 0 31px}
-.check{display:flex;align-items:flex-start;gap:11px;font-size:15px;font-weight:700}
+
+.experience strong{
+  display:block;
+  font:800 25px Manrope;
+  color:#5de0ef;
+}
+
+.experience span{
+  font-size:12px;
+  color:#c3d6da;
+}
+
+.about-copy p{
+  color:var(--muted);
+  font-size:17px;
+  line-height:1.9;
+  margin:20px 0;
+}
+
+.checks{
+  display:grid;
+  gap:14px;
+  margin:27px 0 31px;
+}
+
+.check{
+  display:flex;
+  align-items:flex-start;
+  gap:11px;
+  font-size:15px;
+  font-weight:700;
+}
+
 .check i{
-  font-style:normal;width:25px;height:25px;border-radius:50%;
-  display:grid;place-items:center;background:#e5f8fb;color:var(--teal-dark);flex-shrink:0
+  font-style:normal;
+  width:25px;
+  height:25px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:#e5f8fb;
+  color:var(--teal-dark);
+  flex-shrink:0;
 }
 
-/* Why */
-.why{background:var(--navy);color:#fff}
-.why h2{color:#fff}
-.why .kicker{color:#67ddec}
-.why .section-head p{color:#b4c9ce}
-.why-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:65px;align-items:center}
-.why-cards{display:grid;grid-template-columns:1fr 1fr;gap:15px}
-.why-card{padding:26px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.045);border-radius:18px}
-.why-card b{font-size:23px;color:#5de0ef;display:block;margin-bottom:12px}
-.why-card h3{color:#fff;font-size:18px;margin-bottom:8px}
-.why-card p{font-size:14px;color:#b4c9ce;line-height:1.75}
 
-/* Process */
-.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.step{border:1px solid var(--line);border-radius:20px;padding:28px;background:#fff}
-.step-no{font:800 13px Manrope;color:var(--teal-dark);letter-spacing:1px;margin-bottom:22px}
-.step h3{font-size:21px;margin-bottom:10px}
-.step p{font-size:15px;color:var(--muted);line-height:1.75}
+/* =========================
+   WHY
+========================= */
 
-/* Gallery */
-.gallery{background:var(--bg)}
-.gallery-grid{display:grid;grid-template-columns:1.15fr .85fr .85fr;grid-template-rows:250px 250px;gap:15px}
-.gallery-item{overflow:hidden;border-radius:19px}
-.gallery-item:first-child{grid-row:span 2}
-.gallery-item img{width:100%;height:100%;object-fit:cover;transition:.45s}
-.gallery-item:hover img{transform:scale(1.04)}
+.why{
+  background:var(--navy);
+  color:#fff;
+}
 
-/* Feedback */
-.feedback{background:#fff}
-.feedback-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.why h2{
+  color:#fff;
+}
+
+.why .kicker{
+  color:#67ddec;
+}
+
+.why .section-head p{
+  color:#b4c9ce;
+}
+
+.why-grid{
+  display:grid;
+  grid-template-columns:.85fr 1.15fr;
+  gap:65px;
+  align-items:center;
+}
+
+.why-cards{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+}
+
+.why-card{
+  padding:26px;
+  border:1px solid rgba(255,255,255,.1);
+  background:rgba(255,255,255,.045);
+  border-radius:18px;
+  min-width:0;
+}
+
+.why-card b{
+  font-size:23px;
+  color:#5de0ef;
+  display:block;
+  margin-bottom:12px;
+}
+
+.why-card h3{
+  color:#fff;
+  font-size:18px;
+  margin-bottom:8px;
+}
+
+.why-card p{
+  font-size:14px;
+  color:#b4c9ce;
+  line-height:1.75;
+}
+
+
+/* =========================
+   PROCESS
+========================= */
+
+.process-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
+
+.step{
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:28px;
+  background:#fff;
+  min-width:0;
+}
+
+.step-no{
+  font:800 13px Manrope;
+  color:var(--teal-dark);
+  letter-spacing:1px;
+  margin-bottom:22px;
+}
+
+.step h3{
+  font-size:21px;
+  margin-bottom:10px;
+}
+
+.step p{
+  font-size:15px;
+  color:var(--muted);
+  line-height:1.75;
+}
+
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery{
+  background:var(--bg);
+}
+
+.gallery-grid{
+  display:grid;
+  grid-template-columns:1.15fr .85fr .85fr;
+  grid-template-rows:250px 250px;
+  gap:15px;
+}
+
+.gallery-item{
+  overflow:hidden;
+  border-radius:19px;
+  min-width:0;
+}
+
+.gallery-item:first-child{
+  grid-row:span 2;
+}
+
+.gallery-item img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.45s;
+}
+
+.gallery-item:hover img{
+  transform:scale(1.04);
+}
+
+
+/* =========================
+   FEEDBACK
+========================= */
+
+.feedback{
+  background:#fff;
+}
+
+.feedback-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
 .review{
-  border:1px solid var(--line);border-radius:20px;padding:29px;
-  background:#fff;box-shadow:0 10px 30px rgba(8,62,73,.04)
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:29px;
+  background:#fff;
+  box-shadow:0 10px 30px rgba(8,62,73,.04);
+  min-width:0;
 }
-.stars{color:#f2b53d;letter-spacing:2px;margin-bottom:17px;font-size:17px}
-.review p{font-size:15px;color:#536d75;line-height:1.85;margin-bottom:24px}
-.reviewer{display:flex;align-items:center;gap:11px}
+
+.stars{
+  color:#f2b53d;
+  letter-spacing:2px;
+  margin-bottom:17px;
+  font-size:17px;
+}
+
+.review p{
+  font-size:15px;
+  color:#536d75;
+  line-height:1.85;
+  margin-bottom:24px;
+}
+
+.reviewer{
+  display:flex;
+  align-items:center;
+  gap:11px;
+}
+
 .reviewer-avatar{
-  width:43px;height:43px;border-radius:50%;background:var(--soft);
-  display:grid;place-items:center;color:var(--teal-dark);font-weight:900
+  width:43px;
+  height:43px;
+  border-radius:50%;
+  background:var(--soft);
+  display:grid;
+  place-items:center;
+  color:var(--teal-dark);
+  font-weight:900;
+  flex-shrink:0;
 }
-.reviewer strong{font-size:13px;display:block}
-.reviewer span{font-size:11px;color:var(--muted)}
+
+.reviewer strong{
+  font-size:13px;
+  display:block;
+}
+
+.reviewer span{
+  font-size:11px;
+  color:var(--muted);
+}
+
 .placeholder-note{
-  margin-top:25px;text-align:center;color:var(--muted);font-size:13px;
-  background:var(--bg);border:1px dashed #b9d9de;border-radius:12px;padding:13px
+  margin-top:25px;
+  text-align:center;
+  color:var(--muted);
+  font-size:13px;
+  background:var(--bg);
+  border:1px dashed #b9d9de;
+  border-radius:12px;
+  padding:13px;
 }
 
-/* FAQ */
-.faq{background:var(--bg)}
-.faq-list{max-width:880px;margin:auto}
-.faq-item{background:#fff;border:1px solid var(--line);border-radius:14px;margin-bottom:11px;overflow:hidden}
+
+/* =========================
+   FAQ
+========================= */
+
+.faq{
+  background:var(--bg);
+}
+
+.faq-list{
+  max-width:880px;
+  margin:auto;
+}
+
+.faq-item{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:14px;
+  margin-bottom:11px;
+  overflow:hidden;
+}
+
 .faq-q{
-  width:100%;border:0;background:#fff;padding:21px 23px;text-align:left;
-  display:flex;justify-content:space-between;align-items:center;cursor:pointer;
-  color:var(--navy);font-weight:800;font-size:16px
+  width:100%;
+  border:0;
+  background:#fff;
+  padding:21px 23px;
+  text-align:left;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  cursor:pointer;
+  color:var(--navy);
+  font-weight:800;
+  font-size:16px;
 }
-.faq-q span{font-size:24px;font-weight:400;color:var(--teal);transition:.2s}
-.faq-a{display:none;padding:0 23px 21px;color:var(--muted);font-size:15px;line-height:1.85}
-.faq-item.active .faq-a{display:block}
-.faq-item.active .faq-q span{transform:rotate(45deg)}
 
-/* CTA */
-.cta{padding:86px 0}
+.faq-q span{
+  font-size:24px;
+  font-weight:400;
+  color:var(--teal);
+  transition:.2s;
+}
+
+.faq-a{
+  display:none;
+  padding:0 23px 21px;
+  color:var(--muted);
+  font-size:15px;
+  line-height:1.85;
+}
+
+.faq-item.active .faq-a{
+  display:block;
+}
+
+.faq-item.active .faq-q span{
+  transform:rotate(45deg);
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.cta{
+  padding:86px 0;
+}
+
 .cta-box{
-  background:linear-gradient(125deg,var(--teal),#0b7c91);
-  border-radius:29px;padding:62px;color:#fff;
-  display:flex;align-items:center;justify-content:space-between;gap:32px;
-  overflow:hidden;position:relative;box-shadow:var(--shadow)
+  background:linear-gradient(
+    125deg,
+    var(--teal),
+    #0b7c91
+  );
+  border-radius:29px;
+  padding:62px;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:32px;
+  overflow:hidden;
+  position:relative;
+  box-shadow:var(--shadow);
 }
+
 .cta-box:after{
-  content:"";position:absolute;width:350px;height:350px;border:1px solid rgba(255,255,255,.16);
-  border-radius:50%;right:-110px;top:-160px
+  content:"";
+  position:absolute;
+  width:350px;
+  height:350px;
+  border:1px solid rgba(255,255,255,.16);
+  border-radius:50%;
+  right:-110px;
+  top:-160px;
 }
-.cta-box h2{color:#fff;max-width:680px}
-.cta-box p{color:#d9f6fa;margin-top:12px;font-size:16px;max-width:620px}
-.cta-box .btn{background:#fff;color:var(--teal-dark);position:relative;z-index:2;white-space:nowrap}
 
-/* Appointment */
-.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:52px}
-.contact-info{display:grid;gap:14px}
-.contact-card{border:1px solid var(--line);border-radius:16px;padding:19px;display:flex;gap:13px;background:#fff}
+.cta-box h2{
+  color:#fff;
+  max-width:680px;
+}
+
+.cta-box p{
+  color:#d9f6fa;
+  margin-top:12px;
+  font-size:16px;
+  max-width:620px;
+}
+
+.cta-box .btn{
+  background:#fff;
+  color:var(--teal-dark);
+  position:relative;
+  z-index:2;
+  white-space:nowrap;
+}
+
+
+/* =========================
+   APPOINTMENT
+========================= */
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:.8fr 1.2fr;
+  gap:52px;
+}
+
+.contact-info{
+  display:grid;
+  gap:14px;
+}
+
+.contact-card{
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:19px;
+  display:flex;
+  gap:13px;
+  background:#fff;
+  min-width:0;
+}
+
 .contact-icon{
-  width:44px;height:44px;border-radius:12px;background:var(--soft);
-  color:var(--teal-dark);display:grid;place-items:center;flex-shrink:0;font-weight:900
+  width:44px;
+  height:44px;
+  border-radius:12px;
+  background:var(--soft);
+  color:var(--teal-dark);
+  display:grid;
+  place-items:center;
+  flex-shrink:0;
+  font-weight:900;
 }
-.contact-card strong{display:block;font-size:15px}
-.contact-card span{font-size:14px;color:var(--muted);line-height:1.65}
-.contact-form{border:1px solid var(--line);border-radius:22px;padding:30px;background:#fff;box-shadow:0 12px 35px rgba(8,62,73,.05)}
-.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
-.field.full{grid-column:span 2}
-label{display:block;font-size:13px;font-weight:800;margin-bottom:8px}
-input,textarea,select{
-  width:100%;border:1px solid var(--line);border-radius:11px;padding:14px 15px;
-  outline:0;font-size:15px;color:var(--ink);background:#fff
+
+.contact-card strong{
+  display:block;
+  font-size:15px;
 }
-textarea{height:120px;resize:vertical}
-input:focus,textarea:focus,select:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(24,153,174,.08)}
-.submit{width:100%;cursor:pointer}
-.form-message{font-size:13px;color:#168b6e;margin-top:11px;display:none}
 
-/* Footer */
-footer{background:#050f13;color:#fff;padding:65px 0 23px}
-.footer-grid{display:grid;grid-template-columns:1.35fr .7fr .9fr 1fr;gap:45px;padding-bottom:43px}
-.footer-logo{width:85px;height:66px;object-fit:contain;border-radius:8px}
-.footer-copy{color:#91aab0;font-size:14px;line-height:1.85;max-width:340px;margin-top:17px}
-footer h4{color:#fff;font-size:14px;margin-bottom:17px}
-.footer-links{display:grid;gap:10px}
-.footer-links a{color:#91aab0;font-size:13px}
-.footer-links a:hover{color:#fff}
-.copyright{border-top:1px solid rgba(255,255,255,.08);padding-top:21px;color:#6e878e;text-align:center;font-size:12px}
+.contact-card span{
+  font-size:14px;
+  color:var(--muted);
+  line-height:1.65;
+}
 
-/* Mobile sticky */
-.mobile-bar{display:none}
+.contact-form{
+  border:1px solid var(--line);
+  border-radius:22px;
+  padding:30px;
+  background:#fff;
+  box-shadow:0 12px 35px rgba(8,62,73,.05);
+  min-width:0;
+}
 
-/* Responsive */
+.form-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+}
+
+.field.full{
+  grid-column:span 2;
+}
+
+label{
+  display:block;
+  font-size:13px;
+  font-weight:800;
+  margin-bottom:8px;
+}
+
+input,
+textarea,
+select{
+  width:100%;
+  max-width:100%;
+  border:1px solid var(--line);
+  border-radius:11px;
+  padding:14px 15px;
+  outline:0;
+  font-size:15px;
+  color:var(--ink);
+  background:#fff;
+}
+
+textarea{
+  height:120px;
+  resize:vertical;
+}
+
+input:focus,
+textarea:focus,
+select:focus{
+  border-color:var(--teal);
+  box-shadow:0 0 0 3px rgba(24,153,174,.08);
+}
+
+.submit{
+  width:100%;
+  cursor:pointer;
+}
+
+.form-message{
+  font-size:13px;
+  color:#168b6e;
+  margin-top:11px;
+  display:none;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+  background:#050f13;
+  color:#fff;
+  padding:65px 0 23px;
+  overflow:hidden;
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.35fr .7fr .9fr 1fr;
+  gap:45px;
+  padding-bottom:43px;
+}
+
+.footer-logo{
+  width:85px;
+  height:66px;
+  object-fit:contain;
+  border-radius:8px;
+}
+
+.footer-copy{
+  color:#91aab0;
+  font-size:14px;
+  line-height:1.85;
+  max-width:340px;
+  margin-top:17px;
+}
+
+footer h4{
+  color:#fff;
+  font-size:14px;
+  margin-bottom:17px;
+}
+
+.footer-links{
+  display:grid;
+  gap:10px;
+}
+
+.footer-links a{
+  color:#91aab0;
+  font-size:13px;
+}
+
+.footer-links a:hover{
+  color:#fff;
+}
+
+.copyright{
+  border-top:1px solid rgba(255,255,255,.08);
+  padding-top:21px;
+  color:#6e878e;
+  text-align:center;
+  font-size:12px;
+}
+
+
+/* =========================
+   MOBILE STICKY BAR
+========================= */
+
+.mobile-bar{
+  display:none;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
 @media(max-width:950px){
-  .nav{display:none}
-  .menu{display:block}
+
+  .nav{
+    display:none;
+  }
+
+  .menu{
+    display:block;
+  }
+
   .nav.open{
-    display:flex;position:absolute;top:88px;left:0;width:100%;
-    background:var(--navy);padding:22px 4%;flex-direction:column;
-    align-items:flex-start;border-bottom:1px solid rgba(255,255,255,.1);gap:19px
+    display:flex;
+    position:absolute;
+    top:88px;
+    left:0;
+    width:100%;
+    max-width:100%;
+    background:var(--navy);
+    padding:22px 4%;
+    flex-direction:column;
+    align-items:flex-start;
+    border-bottom:1px solid rgba(255,255,255,.1);
+    gap:19px;
   }
-  .hero-grid,.about-grid,.why-grid,.contact-grid{grid-template-columns:1fr}
-  .hero{padding-top:135px}
-  .hero-visual{max-width:650px;margin:auto;width:100%}
-  .service-grid{grid-template-columns:1fr 1fr}
-  .process-grid{grid-template-columns:1fr 1fr}
-  .feedback-grid{grid-template-columns:1fr}
-  .footer-grid{grid-template-columns:1fr 1fr}
-  .cta-box{align-items:flex-start;flex-direction:column;padding:50px 38px}
+
+  .hero-grid,
+  .about-grid,
+  .why-grid,
+  .contact-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero{
+    padding-top:135px;
+  }
+
+  .hero-visual{
+    max-width:650px;
+    margin:auto;
+    width:100%;
+  }
+
+  .service-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .process-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .feedback-grid{
+    grid-template-columns:1fr;
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .cta-box{
+    align-items:flex-start;
+    flex-direction:column;
+    padding:50px 38px;
+  }
 }
+
+
+/* =========================
+   MOBILE
+========================= */
+
 @media(max-width:600px){
-  body{font-size:16px;padding-bottom:64px}
-  .section{padding:78px 0}
-  .navbar{height:74px}
-  .logo-img{width:145px;height:55px}
-  .nav.open{top:74px}
-  .hero{padding-top:112px;padding-bottom:65px}
-  h2{letter-spacing:-1.2px}
-  .hero h1{font-size:46px;letter-spacing:-2px}
-  .hero-copy{font-size:17px}
-  .hero-actions{display:grid;grid-template-columns:1fr}
-  .hero-actions .btn{width:100%}
-  .hero-photo{height:470px;border-radius:23px}
-  .float-card{left:12px;bottom:12px}
-  .rating-card{right:12px;top:12px}
-  .trust-grid{grid-template-columns:1fr 1fr;row-gap:23px}
-  .trust-item{padding:0 10px}
-  .trust-item:nth-child(2){border:0}
-  .trust-item strong{font-size:21px}
-  .trust-item span{font-size:12px}
-  .service-grid,.process-grid,.why-cards{grid-template-columns:1fr}
-  .service-img{height:235px}
-  .gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:200px 150px}
-  .gallery-item:first-child{grid-column:span 2;grid-row:span 1}
-  .form-grid{grid-template-columns:1fr}
-  .field.full{grid-column:span 1}
-  .footer-grid{grid-template-columns:1fr;gap:31px}
-  .cta-box{padding:42px 28px}
+
+  html,
+  body{
+    width:100%;
+    max-width:100%;
+    overflow-x:hidden !important;
+  }
+
+  body{
+    font-size:16px;
+    padding-bottom:64px;
+  }
+
+  main{
+    width:100%;
+    max-width:100%;
+    overflow-x:hidden;
+  }
+
+  section{
+    width:100%;
+    max-width:100%;
+    overflow-x:hidden;
+  }
+
+  .section{
+    padding:78px 0;
+  }
+
+  .container{
+    width:92%;
+    max-width:92%;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .navbar{
+    height:74px;
+  }
+
+  .logo-img{
+    width:145px;
+    height:55px;
+  }
+
+  .nav.open{
+    top:74px;
+  }
+
+  .hero{
+    padding-top:112px;
+    padding-bottom:65px;
+  }
+
+  h2{
+    letter-spacing:-1.2px;
+  }
+
+  .hero h1{
+    font-size:46px;
+    letter-spacing:-2px;
+  }
+
+  .hero-copy{
+    font-size:17px;
+  }
+
+  .hero-actions{
+    display:grid;
+    grid-template-columns:1fr;
+  }
+
+  .hero-actions .btn{
+    width:100%;
+  }
+
+  .hero-photo{
+    height:470px;
+    border-radius:23px;
+  }
+
+  .float-card{
+    left:12px;
+    bottom:12px;
+    max-width:calc(100% - 24px);
+  }
+
+  .rating-card{
+    right:12px;
+    top:12px;
+    max-width:calc(100% - 24px);
+  }
+
+  .trust-grid{
+    grid-template-columns:1fr 1fr;
+    row-gap:23px;
+  }
+
+  .trust-item{
+    padding:0 10px;
+  }
+
+  .trust-item:nth-child(2){
+    border:0;
+  }
+
+  .trust-item strong{
+    font-size:21px;
+  }
+
+  .trust-item span{
+    font-size:12px;
+  }
+
+  .service-grid,
+  .process-grid,
+  .why-cards{
+    grid-template-columns:1fr;
+  }
+
+  .service-img{
+    height:235px;
+  }
+
+  .about-photo{
+    height:470px;
+  }
+
+  .experience{
+    right:12px;
+    bottom:12px;
+  }
+
+  .gallery-grid{
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:200px 150px;
+  }
+
+  .gallery-item:first-child{
+    grid-column:span 2;
+    grid-row:span 1;
+  }
+
+  .form-grid{
+    grid-template-columns:1fr;
+  }
+
+  .field.full{
+    grid-column:span 1;
+  }
+
+  .contact-form{
+    padding:22px;
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr;
+    gap:31px;
+  }
+
+  .cta-box{
+    padding:42px 28px;
+  }
+
+  /* FIXED MOBILE BOTTOM BAR */
+
   .mobile-bar{
-    position:fixed;bottom:0;left:0;width:100%;z-index:999;
-    background:#fff;border-top:1px solid var(--line);padding:8px;
-    display:grid;grid-template-columns:1fr 1fr 1.25fr;gap:6px
+    position:fixed;
+    bottom:0;
+    left:0;
+    right:0;
+    width:auto;
+    max-width:none;
+    box-sizing:border-box;
+    z-index:999;
+    background:#fff;
+    border-top:1px solid var(--line);
+    padding:8px;
+    display:grid;
+    grid-template-columns:1fr 1fr 1.25fr;
+    gap:6px;
+    overflow:hidden;
   }
+
   .mobile-bar a{
-    padding:11px 4px;border-radius:9px;text-align:center;font-size:11px;
-    font-weight:800;background:var(--soft);color:var(--teal-dark)
+    min-width:0;
+    max-width:100%;
+    padding:11px 4px;
+    border-radius:9px;
+    text-align:center;
+    font-size:11px;
+    font-weight:800;
+    background:var(--soft);
+    color:var(--teal-dark);
+    overflow:hidden;
+    white-space:nowrap;
   }
-  .mobile-bar a:last-child{background:var(--teal);color:#fff}
+
+  .mobile-bar a:last-child{
+    background:var(--teal);
+    color:#fff;
+  }
+
+  /* Extra mobile overflow protection */
+
+  .hero-grid,
+  .about-grid,
+  .why-grid,
+  .contact-grid,
+  .service-grid,
+  .process-grid,
+  .feedback-grid,
+  .footer-grid,
+  .gallery-grid,
+  .trust-grid{
+    width:100%;
+    max-width:100%;
+  }
+
+  .hero-visual,
+  .about-photo-wrap,
+  .service,
+  .step,
+  .review,
+  .contact-card,
+  .contact-form,
+  .gallery-item,
+  .why-card{
+    min-width:0;
+    max-width:100%;
+  }
+
+  .cta-box{
+    max-width:100%;
+  }
+
 }
+
+
+/* =========================
+   EXTRA SMALL DEVICES
+========================= */
+
+@media(max-width:380px){
+
+  .container{
+    width:90%;
+    max-width:90%;
+  }
+
+  .logo-img{
+    width:130px;
+  }
+
+  .hero h1{
+    font-size:40px;
+  }
+
+  .hero-photo{
+    height:430px;
+  }
+
+  .float-card{
+    padding:12px;
+  }
+
+  .float-card strong{
+    font-size:12px;
+  }
+
+  .float-card span{
+    font-size:10px;
+  }
+
+  .rating-card{
+    padding:11px 12px;
+  }
+
+  .rating-card strong{
+    font-size:12px;
+  }
+
+  .rating-card span{
+    font-size:9px;
+  }
+
+  .mobile-bar{
+    padding:7px 6px;
+    gap:5px;
+  }
+
+  .mobile-bar a{
+    font-size:10px;
+    padding:10px 2px;
+  }
+}
+
 </style>
 </head>
 
 <body>
 
+
+<!-- =========================
+     HEADER
+========================= -->
+
 <header>
+
   <div class="container navbar">
+
     <a class="brand" href="#home" aria-label="NextDent home">
-      <img class="logo-img" src="nextdentlgo.png" alt="NextDent - Science of Smile"
-           onerror="this.src= + logo_data_uri + ">
+
+      <img
+        class="logo-img"
+        src="nextdentlogo.jpg"
+        alt="NextDent - Science of Smile"
+      >
+
     </a>
 
+
     <nav class="nav" id="nav">
+
       <a href="#home">Home</a>
+
       <a href="#services">Services</a>
+
       <a href="#about">About Dr. Joy</a>
+
       <a href="#why">Why Choose Dr. Joy</a>
+
       <a href="#feedback">Feedback</a>
+
       <a href="#faq">FAQ</a>
-      <a href="#appointment" class="nav-cta">Book Appointment</a>
+
+      <a href="#appointment" class="nav-cta">
+        Book Appointment
+      </a>
+
     </nav>
 
-    <button class="menu" id="menu" aria-label="Open menu">☰</button>
+
+    <button
+      class="menu"
+      id="menu"
+      aria-label="Open menu"
+    >
+      ☰
+    </button>
+
   </div>
+
 </header>
+
+
 
 <main>
 
+
+<!-- =========================
+     HERO
+========================= -->
+
 <section class="hero" id="home">
+
   <div class="container hero-grid">
+
     <div>
-      <div class="kicker">Oral & Maxillofacial Surgery</div>
-      <h1>Specialist care for your <span>oral health.</span></h1>
+
+      <div class="kicker">
+        Oral & Maxillofacial Surgery
+      </div>
+
+
+      <h1>
+        Specialist care for your
+        <span>oral health.</span>
+      </h1>
+
+
       <p class="hero-copy">
         Dr. Md. Sanwar Hossain (Joy), BDS, FCPS (OMFS), is a registered Oral & Maxillofacial Surgeon
         and Assistant Professor, providing specialist assessment and surgical dental care.
       </p>
 
+
       <div class="hero-actions">
-        <a class="btn btn-primary" href="#appointment">Book an Appointment →</a>
-        <a class="btn btn-light" href="tel:+8801707005756">☎ Call for Appointment</a>
+
+        <a
+          class="btn btn-primary"
+          href="#appointment"
+        >
+          Book an Appointment →
+        </a>
+
+        <a
+          class="btn btn-light"
+          href="tel:+8801707005756"
+        >
+          ☎ Call for Appointment
+        </a>
+
       </div>
+
 
       <div class="hero-note">
-        <div class="mini-icon">✓</div>
-        <div>
-          <strong>BMDC Registered Oral & Maxillofacial Surgeon</strong>
-          <span>Registration No. 8818</span>
+
+        <div class="mini-icon">
+          ✓
         </div>
+
+        <div>
+
+          <strong>
+            BMDC Registered Oral & Maxillofacial Surgeon
+          </strong>
+
+          <span>
+            Registration No. 8818
+          </span>
+
+        </div>
+
       </div>
+
     </div>
+
 
     <div class="hero-visual">
-      <img class="hero-photo" loading="eager" fetchpriority="high"
+
+      <img
+        class="hero-photo"
+        loading="eager"
+        fetchpriority="high"
         src="joyhossain.png"
-        alt="Dr. Md. Sanwar Hossain Joy, Oral and Maxillofacial Surgeon">
+        alt="Dr. Md. Sanwar Hossain Joy, Oral and Maxillofacial Surgeon"
+      >
+
 
       <div class="rating-card">
-        <strong>BMDC Reg. 8818</strong>
-        <span>Verified professional credential</span>
+
+        <strong>
+          BMDC Reg. 8818
+        </strong>
+
+        <span>
+          Verified professional credential
+        </span>
+
       </div>
+
 
       <div class="float-card">
-        <div class="mini-icon">✚</div>
-        <div>
-          <strong>Dr. Sanwar Hossain (Joy)</strong>
-          <span>BDS • FCPS (OMFS)</span>
+
+        <div class="mini-icon">
+          ✚
         </div>
+
+        <div>
+
+          <strong>
+            Dr. Sanwar Hossain (Joy)
+          </strong>
+
+          <span>
+            BDS • FCPS (OMFS)
+          </span>
+
+        </div>
+
       </div>
+
     </div>
+
   </div>
+
 </section>
+
+
+
+<!-- =========================
+     TRUST
+========================= -->
 
 <section class="trust">
+
   <div class="container trust-grid">
+
     <div class="trust-item">
-      <strong>13+ Years</strong>
-      <span>Since BDS Session 2012–13</span>
+
+      <strong>
+        13+ Years
+      </strong>
+
+      <span>
+        Since BDS Session 2012–13
+      </span>
+
     </div>
+
+
     <div class="trust-item">
-      <strong>200+</strong>
-      <span>OSCC surgeries involved in since 2019</span>
+
+      <strong>
+        200+
+      </strong>
+
+      <span>
+        OSCC surgeries involved in since 2019
+      </span>
+
     </div>
+
+
     <div class="trust-item">
-      <strong>BMDC 8818</strong>
-      <span>Registered Oral & Maxillofacial Surgeon</span>
+
+      <strong>
+        BMDC 8818
+      </strong>
+
+      <span>
+        Registered Oral & Maxillofacial Surgeon
+      </span>
+
     </div>
+
+
     <div class="trust-item">
-      <strong>Assistant Professor</strong>
-      <span>Kumudini Women's Medical College Dental Unit</span>
+
+      <strong>
+        Assistant Professor
+      </strong>
+
+      <span>
+        Kumudini Women's Medical College Dental Unit
+      </span>
+
     </div>
+
   </div>
+
 </section>
 
-<section class="section services" id="services">
+
+
+<!-- =========================
+     SERVICES
+========================= -->
+
+<section
+  class="section services"
+  id="services"
+>
+
   <div class="container">
+
     <div class="section-head center">
-      <div class="kicker">Specialized Services</div>
-      <h2>Focused dental and oral surgery care.</h2>
-      <p>Explore specialist areas highlighted in Dr. Joy Hossain's public professional work.</p>
+
+      <div class="kicker">
+        Specialized Services
+      </div>
+
+      <h2>
+        Focused dental and oral surgery care.
+      </h2>
+
+      <p>
+        Explore specialist areas highlighted in Dr. Joy Hossain's public professional work.
+      </p>
+
     </div>
+
 
     <div class="service-grid">
-      <article class="service">
-        <div class="service-img">
-          <img src="https://img.magnific.com/free-photo/girl-dentists-office-dentist-examining-child-patients-teeth-dentistry-concept_169016-66909.jpg?t=st=1788078794~exp=1788082394~hmac=771de9b0cf44de5d700513d38b719eb9ba6c09b9c68b921b8cfaf1d64b5b65d0&w=1480" alt="Dental implant treatment">
-        </div>
-        <div class="service-body">
-          <!-- <div class="service-icon">✦</div> -->
-          <h3>Dental Implant Surgery</h3>
-          <p>Implant fixture placement and related surgical treatment planning when clinically appropriate.</p>
-          <!-- <a href="#appointment">Ask about treatment →</a> -->
-        </div>
-      </article>
+
+
+      <!-- SERVICE 01 -->
 
       <article class="service">
+
         <div class="service-img">
-          <img src="oralandmaxillofacialsurgery.jpg" alt="Oral surgery consultation">
+
+          <img
+            src="https://img.magnific.com/free-photo/girl-dentists-office-dentist-examining-child-patients-teeth-dentistry-concept_169016-66909.jpg?t=st=1788078794~exp=1788082394~hmac=771de9b0cf44de5d700513d38b719eb9ba6c09b9c68b921b8cfaf1d64b5b65d0&w=1480"
+            alt="Dental implant treatment"
+          >
+
         </div>
+
         <div class="service-body">
-          <!-- <div class="service-icon">✚</div> -->
-          <h3>Oral & Maxillofacial Surgery</h3>
-          <p>Specialist assessment and surgical management for conditions involving the mouth, jaw and face.</p>
-          <!-- <a href="#appointment">Book consultation →</a> -->
+
+          <h3>
+            Dental Implant Surgery
+          </h3>
+
+          <p>
+            Implant fixture placement and related surgical treatment planning when clinically appropriate.
+          </p>
+
         </div>
+
       </article>
 
-      <article class="service">
-        <div class="service-img">
-          <img src="https://img.magnific.com/free-photo/child-girl-open-her-mouth-show-her-tounge_169016-37462.jpg?t=st=1788078731~exp=1788082331~hmac=3d368dc5a28dc43751eb3dc807acca95df99dfeb34cc3e01171d3c5935ad9ad9&w=1480" alt="Tongue-tie and dental surgery">
-        </div>
-        <div class="service-body">
-          <!-- <div class="service-icon">◈</div> -->
-          <h3>Tongue-Tie Surgery</h3>
-          <p>Surgical treatment for ankyloglossia (tongue tie) when clinically indicated.</p>
-          <!-- <a href="#appointment">Ask about treatment →</a> -->
-        </div>
-      </article>
+
+
+      <!-- SERVICE 02 -->
 
       <article class="service">
+
         <div class="service-img">
-          <img src="https://images.unsplash.com/photo-1550831107-1553da8c8464?auto=format&fit=crop&w=1000&q=90" alt="Oral cancer specialist consultation">
+
+          <img
+            src="oralandmaxillofacialsurgery.jpg"
+            alt="Oral surgery consultation"
+          >
+
         </div>
+
         <div class="service-body">
-          <!-- <div class="service-icon">◉</div> -->
-          <h3>Oral Cancer Surgery</h3>
-          <p>Professional work includes oral squamous cell carcinoma surgery and complex head & neck procedures.</p>
-          <!-- <a href="#appointment">Request consultation →</a> -->
+
+          <h3>
+            Oral & Maxillofacial Surgery
+          </h3>
+
+          <p>
+            Specialist assessment and surgical management for conditions involving the mouth, jaw and face.
+          </p>
+
         </div>
+
       </article>
 
-      <article class="service">
-        <div class="service-img">
-          <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1000&q=90" alt="Dental and oral consultation">
-        </div>
-        <div class="service-body">
-          <!-- <div class="service-icon">⌕</div> -->
-          <h3>Dental & Oral Consultation</h3>
-          <p>Professional evaluation of oral conditions with discussion of suitable treatment options.</p>
-          <!-- <a href="#appointment">Book consultation →</a> -->
-        </div>
-      </article>
+
+
+      <!-- SERVICE 03 -->
 
       <article class="service">
+
         <div class="service-img">
-          <img src="https://img.magnific.com/free-photo/pacient-dental-clinic-while-operation_140725-7731.jpg?t=st=1788078915~exp=1788082515~hmac=00fb6f7929b2e127d51b2d829ea670b1f97e78ba9c32a8042ed101222dd13b05&w=740" alt="Periodontal surgery">
+
+          <img
+            src="https://img.magnific.com/free-photo/child-girl-open-her-mouth-show-her-tounge_169016-37462.jpg?t=st=1788078731~exp=1788082331~hmac=3d368dc5a28dc43751eb3dc807acca95df99dfeb34cc3e01171d3c5935ad9ad9&w=1480"
+            alt="Tongue-tie and dental surgery"
+          >
+
         </div>
+
         <div class="service-body">
-          <!-- <div class="service-icon">⌁</div> -->
-          <h3>Periodontal Surgery</h3>
-          <p>Periodontal surgical procedures, including crown-lengthening related care where appropriate.</p>
-          <!-- <a href="#appointment">Ask about treatment →</a> -->
+
+          <h3>
+            Tongue-Tie Surgery
+          </h3>
+
+          <p>
+            Surgical treatment for ankyloglossia (tongue tie) when clinically indicated.
+          </p>
+
         </div>
+
       </article>
+
+
+
+      <!-- SERVICE 04 -->
+
+      <article class="service">
+
+        <div class="service-img">
+
+          <img
+            src="https://images.unsplash.com/photo-1550831107-1553da8c8464?auto=format&fit=crop&w=1000&q=90"
+            alt="Oral cancer specialist consultation"
+          >
+
+        </div>
+
+        <div class="service-body">
+
+          <h3>
+            Oral Cancer Surgery
+          </h3>
+
+          <p>
+            Professional work includes oral squamous cell carcinoma surgery and complex head & neck procedures.
+          </p>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- SERVICE 05 -->
+
+      <article class="service">
+
+        <div class="service-img">
+
+          <img
+            src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1000&q=90"
+            alt="Dental and oral consultation"
+          >
+
+        </div>
+
+        <div class="service-body">
+
+          <h3>
+            Dental & Oral Consultation
+          </h3>
+
+          <p>
+            Professional evaluation of oral conditions with discussion of suitable treatment options.
+          </p>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- SERVICE 06 -->
+
+      <article class="service">
+
+        <div class="service-img">
+
+          <img
+            src="https://img.magnific.com/free-photo/pacient-dental-clinic-while-operation_140725-7731.jpg?t=st=1788078915~exp=1788082515~hmac=00fb6f7929b2e127d51b2d829ea670b1f97e78ba9c32a8042ed101222dd13b05&w=740"
+            alt="Periodontal surgery"
+          >
+
+        </div>
+
+        <div class="service-body">
+
+          <h3>
+            Periodontal Surgery
+          </h3>
+
+          <p>
+            Periodontal surgical procedures, including crown-lengthening related care where appropriate.
+          </p>
+
+        </div>
+
+      </article>
+
     </div>
+
   </div>
+
 </section>
 
-<section class="section" id="about">
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section
+  class="section"
+  id="about"
+>
+
   <div class="container about-grid">
+
+
     <div class="about-photo-wrap">
-      <img class="about-photo"
+
+      <img
+        class="about-photo"
         src="joyhossain.png"
-        alt="Dr. Md. Sanwar Hossain Joy">
+        alt="Dr. Md. Sanwar Hossain Joy"
+      >
+
+
       <div class="experience">
-        <strong>FCPS</strong>
-        <span>Oral & Maxillofacial Surgery</span>
+
+        <strong>
+          FCPS
+        </strong>
+
+        <span>
+          Oral & Maxillofacial Surgery
+        </span>
+
       </div>
+
     </div>
 
+
     <div class="about-copy">
-      <div class="kicker">About Dr. Joy</div>
-      <h2>Specialist training with a focus on complex oral care.</h2>
+
+      <div class="kicker">
+        About Dr. Joy
+      </div>
+
+      <h2>
+        Specialist training with a focus on complex oral care.
+      </h2>
+
+
       <p>
         Dr. Md. Sanwar Hossain Joy is a BDS and FCPS (Oral & Maxillofacial Surgery)
         qualified specialist and a registered Oral & Maxillofacial Surgeon with BMDC Registration No. 8818.
       </p>
+
+
       <p>
         His public professional profile lists him as an Assistant Professor in the Department of
         Oral & Maxillofacial Surgery at Kumudini Women's Medical College, Dental Unit.
       </p>
 
+
       <div class="checks">
-        <div class="check"><i>✓</i> BDS, FCPS (Oral & Maxillofacial Surgery)</div>
-        <div class="check"><i>✓</i> BMDC Registered — Reg. No. 8818</div>
-        <div class="check"><i>✓</i> Assistant Professor, Oral & Maxillofacial Surgery</div>
-        <div class="check"><i>✓</i> Professional interest in oral cancer biology, immunology and immunotherapy</div>
+
+        <div class="check">
+          <i>✓</i>
+          BDS, FCPS (Oral & Maxillofacial Surgery)
+        </div>
+
+        <div class="check">
+          <i>✓</i>
+          BMDC Registered — Reg. No. 8818
+        </div>
+
+        <div class="check">
+          <i>✓</i>
+          Assistant Professor, Oral & Maxillofacial Surgery
+        </div>
+
+        <div class="check">
+          <i>✓</i>
+          Professional interest in oral cancer biology, immunology and immunotherapy
+        </div>
+
       </div>
 
-      <a class="btn btn-primary" href="#appointment">Schedule Consultation →</a>
+
+      <a
+        class="btn btn-primary"
+        href="#appointment"
+      >
+        Schedule Consultation →
+      </a>
+
     </div>
+
   </div>
+
 </section>
 
-<section class="section why" id="why">
+
+
+<!-- =========================
+     WHY CHOOSE
+========================= -->
+
+<section
+  class="section why"
+  id="why"
+>
+
   <div class="container why-grid">
+
+
     <div>
-      <div class="kicker">Why Choose Dr. Joy Hossain</div>
-      <h2>Specialist care you can trust.</h2>
-      <div class="section-head" style="margin-top:14px;margin-bottom:0">
-        <p>Experienced in oral and maxillofacial surgery with a strong focus on safe, personalized patient care.</p>
+
+      <div class="kicker">
+        Why Choose Dr. Joy Hossain
       </div>
+
+      <h2>
+        Specialist care you can trust.
+      </h2>
+
+
+      <div
+        class="section-head"
+        style="margin-top:14px;margin-bottom:0"
+      >
+
+        <p>
+          Experienced in oral and maxillofacial surgery with a strong focus on safe, personalized patient care.
+        </p>
+
+      </div>
+
     </div>
+
 
     <div class="why-cards">
+
+
       <article class="why-card">
+
         <b>01</b>
-        <h3>Specialist Surgeon</h3>
-        <p>BDS and FCPS in Oral & Maxillofacial Surgery.</p>
+
+        <h3>
+          Specialist Surgeon
+        </h3>
+
+        <p>
+          BDS and FCPS in Oral & Maxillofacial Surgery.
+        </p>
+
       </article>
 
+
       <article class="why-card">
+
         <b>02</b>
-        <h3>BMDC Registered</h3>
-        <p>Registered Oral & Maxillofacial Surgeon — Reg. No. 8818.</p>
+
+        <h3>
+          BMDC Registered
+        </h3>
+
+        <p>
+          Registered Oral & Maxillofacial Surgeon — Reg. No. 8818.
+        </p>
+
       </article>
 
+
       <article class="why-card">
+
         <b>03</b>
-        <h3>Academic Experience</h3>
-        <p>Assistant Professor in Oral & Maxillofacial Surgery.</p>
+
+        <h3>
+          Academic Experience
+        </h3>
+
+        <p>
+          Assistant Professor in Oral & Maxillofacial Surgery.
+        </p>
+
       </article>
 
+
       <article class="why-card">
+
         <b>04</b>
-        <h3>Surgical Experience</h3>
-        <p>Experienced in complex oral and maxillofacial surgical cases.</p>
+
+        <h3>
+          Surgical Experience
+        </h3>
+
+        <p>
+          Experienced in complex oral and maxillofacial surgical cases.
+        </p>
+
       </article>
+
     </div>
+
   </div>
+
 </section>
-<!-- <section class="section why" id="why">
-  <div class="container why-grid">
-    <div>
-      <div class="kicker">Why Choose Dr. Joy Hossain</div>
-      <h2>Qualified specialist care built around your clinical needs.</h2>
-      <div class="section-head" style="margin-top:14px;margin-bottom:0">
-        <p>Professional details below are based on publicly available profile information.</p>
-      </div>
-    </div>
 
-    <div class="why-cards">
-      <article class="why-card">
-        <b>01</b>
-        <h3>Specialist Qualification</h3>
-        <p>BDS with FCPS training in Oral & Maxillofacial Surgery.</p>
-      </article>
-      <article class="why-card">
-        <b>02</b>
-        <h3>BMDC Registered</h3>
-        <p>Listed with the Bangladesh Medical & Dental Council under registration no. 8818.</p>
-      </article>
-      <article class="why-card">
-        <b>03</b>
-        <h3>Academic Experience</h3>
-        <p>Public profile lists an Assistant Professor role in Oral & Maxillofacial Surgery.</p>
-      </article>
-      <article class="why-card">
-        <b>04</b>
-        <h3>Complex Surgical Exposure</h3>
-        <p>Public professional posts describe involvement in 200+ OSCC surgeries since 2019.</p>
-      </article>
-    </div>
-  </div>
-</section> -->
+
+
+<!-- =========================
+     PROCESS
+========================= -->
 
 <section class="section">
+
   <div class="container">
+
     <div class="section-head center">
-      <div class="kicker">Simple Appointment Process</div>
-      <h2>From first contact to your dental care.</h2>
-      <p>Make your next step simple: request a visit, confirm the schedule, then attend your consultation.</p>
+
+      <div class="kicker">
+        Simple Appointment Process
+      </div>
+
+      <h2>
+        From first contact to your dental care.
+      </h2>
+
+      <p>
+        Make your next step simple: request a visit, confirm the schedule, then attend your consultation.
+      </p>
+
     </div>
+
 
     <div class="process-grid">
-      <article class="step"><div class="step-no">01 / CONTACT</div><h3>Book a Visit</h3><p>Call, WhatsApp or send an appointment request through the website.</p></article>
-      <article class="step"><div class="step-no">02 / CONFIRM</div><h3>Confirm Schedule</h3><p>Your request opens WhatsApp so the appointment details can be confirmed.</p></article>
-      <article class="step"><div class="step-no">03 / CONSULT</div><h3>Dental Consultation</h3><p>Discuss your concern and receive a professional clinical assessment.</p></article>
-      <article class="step"><div class="step-no">04 / CARE</div><h3>Treatment Plan</h3><p>Follow the recommended care pathway based on your clinical needs.</p></article>
+
+
+      <article class="step">
+
+        <div class="step-no">
+          01 / CONTACT
+        </div>
+
+        <h3>
+          Book a Visit
+        </h3>
+
+        <p>
+          Call, WhatsApp or send an appointment request through the website.
+        </p>
+
+      </article>
+
+
+      <article class="step">
+
+        <div class="step-no">
+          02 / CONFIRM
+        </div>
+
+        <h3>
+          Confirm Schedule
+        </h3>
+
+        <p>
+          Your request opens WhatsApp so the appointment details can be confirmed.
+        </p>
+
+      </article>
+
+
+      <article class="step">
+
+        <div class="step-no">
+          03 / CONSULT
+        </div>
+
+        <h3>
+          Dental Consultation
+        </h3>
+
+        <p>
+          Discuss your concern and receive a professional clinical assessment.
+        </p>
+
+      </article>
+
+
+      <article class="step">
+
+        <div class="step-no">
+          04 / CARE
+        </div>
+
+        <h3>
+          Treatment Plan
+        </h3>
+
+        <p>
+          Follow the recommended care pathway based on your clinical needs.
+        </p>
+
+      </article>
+
     </div>
+
   </div>
+
 </section>
 
-<section class="section gallery" id="gallery">
+
+
+<!-- =========================
+     GALLERY
+========================= -->
+
+<section
+  class="section gallery"
+  id="gallery"
+>
+
   <div class="container">
+
     <div class="section-head">
-      <div class="kicker">Clinic & Dental Care</div>
-      <h2>A professional environment for specialist dental care.</h2>
-      <p>Use this gallery for clinic, equipment and treatment-environment photographs. Replace stock photos with approved real clinic images before launch.</p>
+
+      <div class="kicker">
+        Clinic & Dental Care
+      </div>
+
+      <h2>
+        A professional environment for specialist dental care.
+      </h2>
+
+      <p>
+        Use this gallery for clinic, equipment and treatment-environment photographs.
+        Replace stock photos with approved real clinic images before launch.
+      </p>
+
     </div>
+
 
     <div class="gallery-grid">
-      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=90" alt="Modern dental clinic interior"></div>
-      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=900&q=90" alt="Dental treatment environment"></div>
-      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1550831107-1553da8c8464?auto=format&fit=crop&w=900&q=90" alt="Professional healthcare environment"></div>
-      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=900&q=90" alt="Dental consultation environment"></div>
-      <div class="gallery-item"><img src="oralandmaxillofacialsurgery.jpg" alt="Oral and Maxillofacial Surgery"></div>
+
+
+      <div class="gallery-item">
+
+        <img
+          src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=90"
+          alt="Modern dental clinic interior"
+        >
+
+      </div>
+
+
+      <div class="gallery-item">
+
+        <img
+          src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=900&q=90"
+          alt="Dental treatment environment"
+        >
+
+      </div>
+
+
+      <div class="gallery-item">
+
+        <img
+          src="https://images.unsplash.com/photo-1550831107-1553da8c8464?auto=format&fit=crop&w=900&q=90"
+          alt="Professional healthcare environment"
+        >
+
+      </div>
+
+
+      <div class="gallery-item">
+
+        <img
+          src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=900&q=90"
+          alt="Dental consultation environment"
+        >
+
+      </div>
+
+
+      <div class="gallery-item">
+
+        <img
+          src="oralandmaxillofacialsurgery.jpg"
+          alt="Oral and Maxillofacial Surgery"
+        >
+
+      </div>
+
     </div>
+
   </div>
+
 </section>
 
-<section class="section feedback" id="feedback">
+
+
+<!-- =========================
+     FEEDBACK
+========================= -->
+
+<section
+  class="section feedback"
+  id="feedback"
+>
+
   <div class="container">
 
+
     <div class="section-head center">
-      <div class="kicker">Patient Feedback</div>
-      <h2>What patients say about their experience.</h2>
+
+      <div class="kicker">
+        Patient Feedback
+      </div>
+
+      <h2>
+        What patients say about their experience.
+      </h2>
+
       <p>
         A few sample patient experiences are shown below. Replace these with
         verified patient reviews before publishing.
       </p>
+
     </div>
+
 
     <div class="feedback-grid">
 
-      <!-- Review 01 -->
+
+      <!-- REVIEW 01 -->
+
       <article class="review">
-        <div class="stars">★★★★★</div>
+
+        <div class="stars">
+          ★★★★★
+        </div>
 
         <p>
           “The doctor explained my treatment clearly and made me feel
@@ -699,19 +2425,36 @@ footer h4{color:#fff;font-size:14px;margin-bottom:17px}
         </p>
 
         <div class="reviewer">
-          <div class="reviewer-avatar">R</div>
+
+          <div class="reviewer-avatar">
+            R
+          </div>
 
           <div>
-            <strong>Rahim Ahmed</strong>
-            <span>Dental Consultation</span>
+
+            <strong>
+              Rahim Ahmed
+            </strong>
+
+            <span>
+              Dental Consultation
+            </span>
+
           </div>
+
         </div>
+
       </article>
 
 
-      <!-- Review 02 -->
+
+      <!-- REVIEW 02 -->
+
       <article class="review">
-        <div class="stars">★★★★★</div>
+
+        <div class="stars">
+          ★★★★★
+        </div>
 
         <p>
           “I was very satisfied with the consultation. Dr. Joy Hossain
@@ -720,19 +2463,36 @@ footer h4{color:#fff;font-size:14px;margin-bottom:17px}
         </p>
 
         <div class="reviewer">
-          <div class="reviewer-avatar">S</div>
+
+          <div class="reviewer-avatar">
+            S
+          </div>
 
           <div>
-            <strong>Shamima Akter</strong>
-            <span>Oral & Dental Care</span>
+
+            <strong>
+              Shamima Akter
+            </strong>
+
+            <span>
+              Oral & Dental Care
+            </span>
+
           </div>
+
         </div>
+
       </article>
 
 
-      <!-- Review 03 -->
+
+      <!-- REVIEW 03 -->
+
       <article class="review">
-        <div class="stars">★★★★★</div>
+
+        <div class="stars">
+          ★★★★★
+        </div>
 
         <p>
           “Very professional and reassuring experience. I appreciated the
@@ -741,239 +2501,785 @@ footer h4{color:#fff;font-size:14px;margin-bottom:17px}
         </p>
 
         <div class="reviewer">
-          <div class="reviewer-avatar">T</div>
+
+          <div class="reviewer-avatar">
+            T
+          </div>
 
           <div>
-            <strong>Tanvir Hasan</strong>
-            <span>Oral Surgery Consultation</span>
+
+            <strong>
+              Tanvir Hasan
+            </strong>
+
+            <span>
+              Oral Surgery Consultation
+            </span>
+
           </div>
+
         </div>
+
       </article>
 
     </div>
 
   </div>
+
 </section>
 
-<section class="section faq" id="faq">
+
+
+<!-- =========================
+     FAQ
+========================= -->
+
+<section
+  class="section faq"
+  id="faq"
+>
+
   <div class="container">
+
     <div class="section-head center">
-      <div class="kicker">FAQ</div>
-      <h2>Questions patients often ask.</h2>
+
+      <div class="kicker">
+        FAQ
+      </div>
+
+      <h2>
+        Questions patients often ask.
+      </h2>
+
     </div>
+
 
     <div class="faq-list">
+
+
       <div class="faq-item">
-        <button class="faq-q">How can I book an appointment?<span>+</span></button>
-        <div class="faq-a">Use the appointment form below, call or whatsapp 01707-005756. Appointment availability should be confirmed directly.</div>
+
+        <button class="faq-q">
+
+          How can I book an appointment?
+
+          <span>
+            +
+          </span>
+
+        </button>
+
+        <div class="faq-a">
+
+          Use the appointment form below, call or WhatsApp
+          01707-005756. Appointment availability should be confirmed directly.
+
+        </div>
+
       </div>
+
+
+
       <div class="faq-item">
-        <button class="faq-q">What type of doctor is Dr. Joy Hossain?<span>+</span></button>
-        <div class="faq-a">He is a BDS, FCPS (Oral & Maxillofacial Surgery) qualified Oral & Maxillofacial Surgeon and is listed publicly as an Assistant Professor.</div>
+
+        <button class="faq-q">
+
+          What type of doctor is Dr. Joy Hossain?
+
+          <span>
+            +
+          </span>
+
+        </button>
+
+        <div class="faq-a">
+
+          He is a BDS, FCPS (Oral & Maxillofacial Surgery) qualified
+          Oral & Maxillofacial Surgeon and is listed publicly as an Assistant Professor.
+
+        </div>
+
       </div>
+
+
+
       <div class="faq-item">
-        <button class="faq-q">Do I need a consultation before treatment?<span>+</span></button>
-        <div class="faq-a">A consultation helps assess your concern and determine the appropriate next step before treatment is planned.</div>
+
+        <button class="faq-q">
+
+          Do I need a consultation before treatment?
+
+          <span>
+            +
+          </span>
+
+        </button>
+
+        <div class="faq-a">
+
+          A consultation helps assess your concern and determine the
+          appropriate next step before treatment is planned.
+
+        </div>
+
       </div>
+
+
+
       <div class="faq-item">
-        <button class="faq-q">What should I bring to my appointment?<span>+</span></button>
-        <div class="faq-a">Bring previous dental reports, imaging, prescriptions and relevant medical information when applicable.</div>
+
+        <button class="faq-q">
+
+          What should I bring to my appointment?
+
+          <span>
+            +
+          </span>
+
+        </button>
+
+        <div class="faq-a">
+
+          Bring previous dental reports, imaging, prescriptions and
+          relevant medical information when applicable.
+
+        </div>
+
       </div>
+
     </div>
+
   </div>
+
 </section>
+
+
+
+<!-- =========================
+     CTA
+========================= -->
 
 <section class="cta">
+
   <div class="container">
+
     <div class="cta-box">
+
       <div>
-        <h2>Ready to take the next step for your oral health?</h2>
-        <p>Request an appointment and contact the clinic to confirm a convenient consultation time.</p>
+
+        <h2>
+          Ready to take the next step for your oral health?
+        </h2>
+
+        <p>
+          Request an appointment and contact the clinic to confirm a convenient consultation time.
+        </p>
+
       </div>
-      <a class="btn" href="#appointment">Book Appointment →</a>
+
+
+      <a
+        class="btn"
+        href="#appointment"
+      >
+        Book Appointment →
+      </a>
+
     </div>
+
   </div>
+
 </section>
 
-<section class="section" id="appointment">
+
+
+<!-- =========================
+     APPOINTMENT
+========================= -->
+
+<section
+  class="section"
+  id="appointment"
+>
+
   <div class="container">
+
+
     <div class="section-head">
-      <div class="kicker">Appointment Booking</div>
-      <h2>Request your consultation.</h2>
-      <p>Fill in the details below. Your request will open WhatsApp with the appointment information for confirmation.</p>
+
+      <div class="kicker">
+        Appointment Booking
+      </div>
+
+      <h2>
+        Request your consultation.
+      </h2>
+
+      <p>
+        Fill in the details below. Your request will open WhatsApp with the appointment information for confirmation.
+      </p>
+
     </div>
+
 
     <div class="contact-grid">
+
+
       <div class="contact-info">
-        <div class="contact-card">
-          <div class="contact-icon">☎</div>
-          <div>
-            <strong>Appointment Number</strong>
-            <span><a href="tel:+8801707005756">+880 1707-005756</a></span>
-          </div>
-        </div>
+
 
         <div class="contact-card">
-          <div class="contact-icon">⌖</div>
-          <div>
-            <strong>Professional Location</strong>
-            <span>Lilyrin Tower (5th floor), House-39/1, Road-02, Dhanmondi, Dhaka 1209.</span>
+
+          <div class="contact-icon">
+            ☎
           </div>
+
+          <div>
+
+            <strong>
+              Appointment Number
+            </strong>
+
+            <span>
+              <a href="tel:+8801707005756">
+                +880 1707-005756
+              </a>
+            </span>
+
+          </div>
+
         </div>
 
-        <div class="contact-card">
-          <div class="contact-icon">✓</div>
-          <div>
-            <strong>Credentials</strong>
-            <span>BDS • FCPS (OMFS) • BMDC Reg. 8818</span>
-          </div>
-        </div>
 
         <div class="contact-card">
-          <div class="contact-icon">◷</div>
-          <div>
-            <strong>Appointment Availability</strong>
-            <span>Clinic schedule and available time should be confirmed through the appointment contact.</span>
+
+          <div class="contact-icon">
+            ⌖
           </div>
+
+          <div>
+
+            <strong>
+              Professional Location
+            </strong>
+
+            <span>
+              Lilyrin Tower (5th floor), House-39/1, Road-02,
+              Dhanmondi, Dhaka 1209.
+            </span>
+
+          </div>
+
         </div>
+
+
+        <div class="contact-card">
+
+          <div class="contact-icon">
+            ✓
+          </div>
+
+          <div>
+
+            <strong>
+              Credentials
+            </strong>
+
+            <span>
+              BDS • FCPS (OMFS) • BMDC Reg. 8818
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="contact-card">
+
+          <div class="contact-icon">
+            ◷
+          </div>
+
+          <div>
+
+            <strong>
+              Appointment Availability
+            </strong>
+
+            <span>
+              Clinic schedule and available time should be confirmed
+              through the appointment contact.
+            </span>
+
+          </div>
+
+        </div>
+
       </div>
 
-      <form class="contact-form" id="appointmentForm">
+
+
+      <!-- APPOINTMENT FORM -->
+
+      <form
+        class="contact-form"
+        id="appointmentForm"
+      >
+
         <div class="form-grid">
+
+
           <div>
-            <label for="name">Patient Name *</label>
-            <input id="name" required placeholder="Your full name">
+
+            <label for="name">
+              Patient Name *
+            </label>
+
+            <input
+              id="name"
+              required
+              placeholder="Your full name"
+            >
+
           </div>
+
+
           <div>
-            <label for="phone">Phone Number *</label>
-            <input id="phone" type="tel" required placeholder="01XXXXXXXXX">
+
+            <label for="phone">
+              Phone Number *
+            </label>
+
+            <input
+              id="phone"
+              type="tel"
+              required
+              placeholder="01XXXXXXXXX"
+            >
+
           </div>
+
+
           <div>
-            <label for="date">Preferred Date *</label>
-            <input id="date" type="date" required>
+
+            <label for="date">
+              Preferred Date *
+            </label>
+
+            <input
+              id="date"
+              type="date"
+              required
+            >
+
           </div>
+
+
           <div>
-            <label for="time">Preferred Time</label>
-            <input id="time" type="time">
+
+            <label for="time">
+              Preferred Time
+            </label>
+
+            <input
+              id="time"
+              type="time"
+            >
+
           </div>
+
+
           <div class="field full">
-            <label for="service">Reason for Visit *</label>
-            <select id="service" required>
-              <option value="">Select a service</option>
-              <option>Dental / Oral Consultation</option>
-              <option>Oral & Maxillofacial Surgery</option>
-              <option>Dental Implant</option>
-              <option>Tongue-Tie Surgery</option>
-              <option>Oral Cancer Consultation</option>
-              <option>Periodontal Surgery</option>
-              <option>Other</option>
+
+            <label for="service">
+              Reason for Visit *
+            </label>
+
+            <select
+              id="service"
+              required
+            >
+
+              <option value="">
+                Select a service
+              </option>
+
+              <option>
+                Dental / Oral Consultation
+              </option>
+
+              <option>
+                Oral & Maxillofacial Surgery
+              </option>
+
+              <option>
+                Dental Implant
+              </option>
+
+              <option>
+                Tongue-Tie Surgery
+              </option>
+
+              <option>
+                Oral Cancer Consultation
+              </option>
+
+              <option>
+                Periodontal Surgery
+              </option>
+
+              <option>
+                Other
+              </option>
+
             </select>
+
           </div>
+
+
           <div class="field full">
-            <label for="message">Additional Information</label>
-            <textarea id="message" placeholder="Briefly describe your concern..."></textarea>
+
+            <label for="message">
+              Additional Information
+            </label>
+
+            <textarea
+              id="message"
+              placeholder="Briefly describe your concern..."
+            ></textarea>
+
           </div>
+
+
           <div class="field full">
-            <button class="btn btn-primary submit" type="submit">Send Appointment Request on WhatsApp →</button>
-            <div class="form-message" id="formMessage"></div>
+
+            <button
+              class="btn btn-primary submit"
+              type="submit"
+            >
+              Send Appointment Request on WhatsApp →
+            </button>
+
+            <div
+              class="form-message"
+              id="formMessage"
+            ></div>
+
           </div>
+
         </div>
+
       </form>
+
     </div>
+
   </div>
+
 </section>
+
 
 </main>
 
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
+
   <div class="container">
+
     <div class="footer-grid">
-      <div>
-        <img class="footer-logo" src="nextdentlgo.png" alt="NextDent - Science of Smile"
-             onerror="this.src= + logo_data_uri + ">
-        <p class="footer-copy">NextDent — Science of Smile. Dr. Md. Sanwar Hossain (Joy), BDS, FCPS (OMFS), Oral & Maxillofacial Surgeon and Assistant Professor.</p>
-      </div>
+
 
       <div>
-        <h4>Navigation</h4>
-        <div class="footer-links">
-          <a href="#home">Home</a>
-          <a href="#services">Services</a>
-          <a href="#about">About Dr. Joy</a>
-          <a href="#feedback">Feedback</a>
-        </div>
+
+        <img
+          class="footer-logo"
+          src="nextdentlogo.jpg"
+          alt="NextDent - Science of Smile"
+        >
+
+        <p class="footer-copy">
+          NextDent — Science of Smile. Dr. Md. Sanwar Hossain (Joy),
+          BDS, FCPS (OMFS), Oral & Maxillofacial Surgeon and Assistant Professor.
+        </p>
+
       </div>
 
-      <div>
-        <h4>Specialist Care</h4>
-        <div class="footer-links">
-          <a href="#services">Oral Surgery</a>
-          <a href="#services">Dental Implant</a>
-          <a href="#services">Tongue-Tie Surgery</a>
-          <a href="#services">Oral Cancer Surgery</a>
-        </div>
-      </div>
+
 
       <div>
-        <h4>Contact</h4>
+
+        <h4>
+          Navigation
+        </h4>
+
         <div class="footer-links">
-          <a href="tel:+8801707005756">Appointment: 01707-005756</a>
-          <a href="https://wa.me/8801707005756" target="_blank" rel="noopener">WhatsApp: 01707-005756</a>
-          <a href="#appointment">Book Appointment</a>
+
+          <a href="#home">
+            Home
+          </a>
+
+          <a href="#services">
+            Services
+          </a>
+
+          <a href="#about">
+            About Dr. Joy
+          </a>
+
+          <a href="#feedback">
+            Feedback
+          </a>
+
         </div>
+
       </div>
+
+
+
+      <div>
+
+        <h4>
+          Specialist Care
+        </h4>
+
+        <div class="footer-links">
+
+          <a href="#services">
+            Oral Surgery
+          </a>
+
+          <a href="#services">
+            Dental Implant
+          </a>
+
+          <a href="#services">
+            Tongue-Tie Surgery
+          </a>
+
+          <a href="#services">
+            Oral Cancer Surgery
+          </a>
+
+        </div>
+
+      </div>
+
+
+
+      <div>
+
+        <h4>
+          Contact
+        </h4>
+
+        <div class="footer-links">
+
+          <a href="tel:+8801707005756">
+            Appointment: 01707-005756
+          </a>
+
+          <a
+            href="https://wa.me/8801707005756"
+            target="_blank"
+            rel="noopener"
+          >
+            WhatsApp: 01707-005756
+          </a>
+
+          <a href="#appointment">
+            Book Appointment
+          </a>
+
+        </div>
+
+      </div>
+
     </div>
 
-    <div class="copyright">© 2026 NextDent. All rights reserved.</div>
+
+    <div class="copyright">
+      © 2026 NextDent. All rights reserved.
+    </div>
+
   </div>
+
 </footer>
 
+
+
+<!-- =========================
+     MOBILE BOTTOM BAR
+========================= -->
+
 <div class="mobile-bar">
-  <a href="tel:+8801707005756">☎ Call</a>
-  <a href="https://wa.me/8801707005756" target="_blank" rel="noopener">WhatsApp</a>
-  <a href="#appointment">Book Appointment</a>
+
+  <a href="tel:+8801707005756">
+    ☎ Call
+  </a>
+
+  <a
+    href="https://wa.me/8801707005756"
+    target="_blank"
+    rel="noopener"
+  >
+    WhatsApp
+  </a>
+
+  <a href="#appointment">
+    Book Appointment
+  </a>
+
 </div>
 
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
 <script>
+
+
+/* =========================
+   MOBILE MENU
+========================= */
+
 const menu = document.getElementById("menu");
+
 const nav = document.getElementById("nav");
 
-menu.addEventListener("click", () => nav.classList.toggle("open"));
-document.querySelectorAll(".nav a").forEach(a => {
-  a.addEventListener("click", () => nav.classList.remove("open"));
+
+menu.addEventListener("click", () => {
+
+  nav.classList.toggle("open");
+
 });
+
+
+document.querySelectorAll(".nav a").forEach(a => {
+
+  a.addEventListener("click", () => {
+
+    nav.classList.remove("open");
+
+  });
+
+});
+
+
+
+/* =========================
+   FAQ
+========================= */
 
 document.querySelectorAll(".faq-q").forEach(q => {
+
   q.addEventListener("click", () => {
+
     const item = q.parentElement;
+
+
     document.querySelectorAll(".faq-item").forEach(x => {
-      if (x !== item) x.classList.remove("active");
+
+      if(x !== item){
+
+        x.classList.remove("active");
+
+      }
+
     });
+
+
     item.classList.toggle("active");
+
   });
+
 });
 
+
+
+/* =========================
+   DATE
+========================= */
+
 const dateInput = document.getElementById("date");
+
 const now = new Date();
-const localDate = new Date(now.getTime() - now.getTimezoneOffset() * 60000)
-  .toISOString().split("T")[0];
+
+const localDate = new Date(
+  now.getTime() - now.getTimezoneOffset() * 60000
+)
+.toISOString()
+.split("T")[0];
+
 dateInput.min = localDate;
 
-document.getElementById("appointmentForm").addEventListener("submit", e => {
+
+
+/* =========================
+   APPOINTMENT FORM
+========================= */
+
+document
+.getElementById("appointmentForm")
+.addEventListener("submit", e => {
+
   e.preventDefault();
 
-  const name = document.getElementById("name").value.trim();
-  const phone = document.getElementById("phone").value.trim();
-  const date = document.getElementById("date").value;
-  const time = document.getElementById("time").value || "Not specified";
-  const service = document.getElementById("service").value;
-  const message = document.getElementById("message").value.trim() || "No additional information.";
+
+  const name =
+    document.getElementById("name")
+    .value
+    .trim();
+
+
+  const phone =
+    document.getElementById("phone")
+    .value
+    .trim();
+
+
+  const date =
+    document.getElementById("date")
+    .value;
+
+
+  const time =
+    document.getElementById("time")
+    .value ||
+    "Not specified";
+
+
+  const service =
+    document.getElementById("service")
+    .value;
+
+
+  const message =
+    document.getElementById("message")
+    .value
+    .trim() ||
+    "No additional information.";
+
 
   const formattedDate = date
-    ? new Date(date + "T00:00:00").toLocaleDateString("en-GB", {
-        day: "2-digit", month: "short", year: "numeric"
-      })
+
+    ? new Date(date + "T00:00:00")
+        .toLocaleDateString(
+          "en-GB",
+          {
+            day:"2-digit",
+            month:"short",
+            year:"numeric"
+          }
+        )
+
     : "Not specified";
+
 
   const text =
 `Hello Dr. Sanwar Hossain (Joy),
@@ -989,14 +3295,31 @@ Additional Information: ${message}
 
 Please confirm the available appointment time. Thank you.`;
 
-  const url = "https://wa.me/8801707005756?text=" + encodeURIComponent(text);
 
-  const formMessage = document.getElementById("formMessage");
+
+  const url =
+    "https://wa.me/8801707005756?text="
+    + encodeURIComponent(text);
+
+
+  const formMessage =
+    document.getElementById("formMessage");
+
+
   formMessage.style.display = "block";
-  formMessage.textContent = "Opening WhatsApp with your appointment details…";
 
-  window.open(url, "_blank");
+
+  formMessage.textContent =
+    "Opening WhatsApp with your appointment details…";
+
+
+  window.open(
+    url,
+    "_blank"
+  );
+
 });
+
 </script>
 
 </body>
