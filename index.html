@@ -342,7 +342,7 @@ footer h4{color:#fff;font-size:14px;margin-bottom:17px}
   .field.full{grid-column:span 1}
   .footer-grid{grid-template-columns:1fr;gap:31px}
   .cta-box{padding:42px 28px}
-  .mobile-bar{
+  /* .mobile-bar{
     position:fixed;bottom:0;left:0;width:100%;z-index:999;
     background:#fff;border-top:1px solid var(--line);padding:8px;
     display:grid;grid-template-columns:1fr 1fr 1.25fr;gap:6px
@@ -352,7 +352,100 @@ footer h4{color:#fff;font-size:14px;margin-bottom:17px}
     font-weight:800;background:var(--soft);color:var(--teal-dark)
   }
   .mobile-bar a:last-child{background:var(--teal);color:#fff}
+} */
+
+.mobile-bar{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  width:auto;
+  max-width:none;
+  box-sizing:border-box;
+  z-index:999;
+  background:#fff;
+  border-top:1px solid var(--line);
+  padding:8px;
+  display:grid;
+  grid-template-columns:1fr 1fr 1.25fr;
+  gap:6px;
 }
+
+.mobile-bar a{
+  padding:11px 4px;
+  border-radius:9px;
+  text-align:center;
+  font-size:11px;
+  font-weight:800;
+  background:var(--soft);
+  color:var(--teal-dark);
+  min-width:0;
+}
+
+.mobile-bar a:last-child{
+  background:var(--teal);
+  color:#fff;
+}
+
+  /* ================================
+   MOBILE HORIZONTAL OVERFLOW FIX
+================================ */
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+* {
+  max-width: 100%;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* Prevent mobile bottom bar from creating horizontal overflow */
+@media (max-width: 600px) {
+
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .mobile-bar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    max-width: none;
+    box-sizing: border-box;
+  }
+
+  .mobile-bar a {
+    min-width: 0;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  /* Make every main section stay inside the viewport */
+  section,
+  header,
+  footer,
+  main {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .container {
+    width: 92%;
+    max-width: 92%;
+  }
+}
+  
 </style>
 </head>
 
